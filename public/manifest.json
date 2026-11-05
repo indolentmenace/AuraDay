@@ -1,0 +1,32 @@
+{
+  "id": "/",
+  "name": "AuraDay — Умное расписание",
+  "short_name": "AuraDay",
+  "description": "Персональное умное расписание дня в стиле iOS с учетом пар, репетиторства и зала.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#fbf8f5",
+  "theme_color": "#f43f5e",
+  "icons": [
+    {
+      "src": "/pwa-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

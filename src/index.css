@@ -1,0 +1,321 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* =========================================================
+   Theme CSS Variables: Light & Dark Modes
+   Adapting pastel palette to dark background with glowing jewel/pastel tones
+   ========================================================= */
+:root {
+  --color-scheme: light;
+  --bg-page: #f7f5f2;
+  --bg-frame: #fbf8f5;
+  --bg-card: rgba(255, 255, 255, 0.9);
+  --border-card: rgba(226, 232, 240, 0.8);
+  --text-primary: #1e293b;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+
+  /* Pastel Categories - Light Mode */
+  --cat-study_uni-bg: rgba(238, 242, 255, 0.85);
+  --cat-study_uni-border: #e0e7ff;
+  --cat-study_uni-title: #312e81;
+  --cat-study_uni-badge-bg: #e0e7ff;
+  --cat-study_uni-badge-text: #4338ca;
+
+  --cat-career-bg: rgba(240, 249, 255, 0.85);
+  --cat-career-border: #e0f2fe;
+  --cat-career-title: #0c4a6e;
+  --cat-career-badge-bg: #e0f2fe;
+  --cat-career-badge-text: #0369a1;
+
+  --cat-gym_sport-bg: rgba(236, 253, 245, 0.85);
+  --cat-gym_sport-border: #d1fae5;
+  --cat-gym_sport-title: #064e3b;
+  --cat-gym_sport-badge-bg: #d1fae5;
+  --cat-gym_sport-badge-text: #047857;
+
+  --cat-abs-bg: rgba(240, 253, 250, 0.85);
+  --cat-abs-border: #ccfbf1;
+  --cat-abs-title: #134e4a;
+  --cat-abs-badge-bg: #ccfbf1;
+  --cat-abs-badge-text: #0f766e;
+
+  --cat-analytics-bg: rgba(240, 249, 255, 0.85);
+  --cat-analytics-border: #e0f2fe;
+  --cat-analytics-title: #0c4a6e;
+  --cat-analytics-badge-bg: #e0f2fe;
+  --cat-analytics-badge-text: #0369a1;
+
+  --cat-languages-bg: rgba(255, 241, 242, 0.85);
+  --cat-languages-border: #ffe4e6;
+  --cat-languages-title: #881337;
+  --cat-languages-badge-bg: #ffe4e6;
+  --cat-languages-badge-text: #be123c;
+
+  --cat-reading-bg: rgba(250, 245, 255, 0.85);
+  --cat-reading-border: #f3e8ff;
+  --cat-reading-title: #581c87;
+  --cat-reading-badge-bg: #f3e8ff;
+  --cat-reading-badge-text: #7e22ce;
+
+  --cat-routine-bg: rgba(250, 250, 249, 0.85);
+  --cat-routine-border: #e7e5e4;
+  --cat-routine-title: #292524;
+  --cat-routine-badge-bg: rgba(231, 229, 228, 0.7);
+  --cat-routine-badge-text: #44403c;
+
+  --cat-relaxation-bg: rgba(253, 244, 255, 0.85);
+  --cat-relaxation-border: #fae8ff;
+  --cat-relaxation-title: #701a75;
+  --cat-relaxation-badge-bg: #fae8ff;
+  --cat-relaxation-badge-text: #a21caf;
+
+  --cat-tutoring-bg: rgba(255, 251, 235, 0.85);
+  --cat-tutoring-border: #fef3c7;
+  --cat-tutoring-title: #78350f;
+  --cat-tutoring-badge-bg: #fef3c7;
+  --cat-tutoring-badge-text: #b45309;
+}
+
+.dark {
+  --color-scheme: dark;
+  --bg-page: #121214;
+  --bg-frame: #18181b;
+  --bg-card: rgba(34, 34, 38, 0.85);
+  --border-card: rgba(255, 255, 255, 0.08);
+  --text-primary: #f4f4f5;
+  --text-secondary: #d4d4d8;
+  --text-muted: #71717a;
+
+  /* Pastel Categories - Adapted for Gray-Black Dark Background */
+  --cat-study_uni-bg: rgba(99, 102, 241, 0.14);
+  --cat-study_uni-border: rgba(129, 140, 248, 0.3);
+  --cat-study_uni-title: #e0e7ff;
+  --cat-study_uni-badge-bg: rgba(99, 102, 241, 0.25);
+  --cat-study_uni-badge-text: #c7d2fe;
+
+  --cat-career-bg: rgba(56, 189, 248, 0.14);
+  --cat-career-border: rgba(56, 189, 248, 0.3);
+  --cat-career-title: #e0f2fe;
+  --cat-career-badge-bg: rgba(56, 189, 248, 0.25);
+  --cat-career-badge-text: #bae6fd;
+
+  --cat-gym_sport-bg: rgba(16, 185, 129, 0.14);
+  --cat-gym_sport-border: rgba(52, 211, 153, 0.3);
+  --cat-gym_sport-title: #d1fae5;
+  --cat-gym_sport-badge-bg: rgba(16, 185, 129, 0.25);
+  --cat-gym_sport-badge-text: #a7f3d0;
+
+  --cat-abs-bg: rgba(20, 184, 166, 0.14);
+  --cat-abs-border: rgba(45, 212, 191, 0.3);
+  --cat-abs-title: #ccfbf1;
+  --cat-abs-badge-bg: rgba(20, 184, 166, 0.25);
+  --cat-abs-badge-text: #99f6e4;
+
+  --cat-analytics-bg: rgba(56, 189, 248, 0.14);
+  --cat-analytics-border: rgba(56, 189, 248, 0.3);
+  --cat-analytics-title: #e0f2fe;
+  --cat-analytics-badge-bg: rgba(56, 189, 248, 0.25);
+  --cat-analytics-badge-text: #bae6fd;
+
+  --cat-languages-bg: rgba(244, 63, 94, 0.14);
+  --cat-languages-border: rgba(251, 113, 133, 0.3);
+  --cat-languages-title: #ffe4e6;
+  --cat-languages-badge-bg: rgba(244, 63, 94, 0.25);
+  --cat-languages-badge-text: #fecdd3;
+
+  --cat-reading-bg: rgba(168, 85, 247, 0.14);
+  --cat-reading-border: rgba(192, 132, 252, 0.3);
+  --cat-reading-title: #f3e8ff;
+  --cat-reading-badge-bg: rgba(168, 85, 247, 0.25);
+  --cat-reading-badge-text: #e9d5ff;
+
+  --cat-routine-bg: rgba(161, 161, 170, 0.12);
+  --cat-routine-border: rgba(161, 161, 170, 0.25);
+  --cat-routine-title: #f4f4f5;
+  --cat-routine-badge-bg: rgba(161, 161, 170, 0.2);
+  --cat-routine-badge-text: #e4e4e7;
+
+  --cat-relaxation-bg: rgba(217, 70, 239, 0.14);
+  --cat-relaxation-border: rgba(232, 121, 249, 0.3);
+  --cat-relaxation-title: #fae8ff;
+  --cat-relaxation-badge-bg: rgba(217, 70, 239, 0.25);
+  --cat-relaxation-badge-text: #f5d0fe;
+
+  --cat-tutoring-bg: rgba(245, 158, 11, 0.14);
+  --cat-tutoring-border: rgba(251, 191, 36, 0.3);
+  --cat-tutoring-title: #fef3c7;
+  --cat-tutoring-badge-bg: rgba(245, 158, 11, 0.25);
+  --cat-tutoring-badge-text: #fde68a;
+}
+
+@layer base {
+  html, body {
+    height: 100%;
+    min-height: 100dvh;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: var(--bg-page);
+    color: var(--text-primary);
+    overscroll-behavior-y: none;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+}
+
+/* iOS Safe Area Utilities for iPhone 11 Notch & Home Indicator */
+.pt-safe {
+  padding-top: env(safe-area-inset-top, 0px);
+}
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+.pl-safe {
+  padding-left: env(safe-area-inset-left, 0px);
+}
+.pr-safe {
+  padding-right: env(safe-area-inset-right, 0px);
+}
+
+/* Category Card Containers using CSS variables */
+.category-card-study_uni { background-color: var(--cat-study_uni-bg); border-color: var(--cat-study_uni-border); }
+.category-card-career { background-color: var(--cat-career-bg); border-color: var(--cat-career-border); }
+.category-card-gym_sport { background-color: var(--cat-gym_sport-bg); border-color: var(--cat-gym_sport-border); }
+.category-card-abs { background-color: var(--cat-abs-bg); border-color: var(--cat-abs-border); }
+.category-card-analytics { background-color: var(--cat-analytics-bg); border-color: var(--cat-analytics-border); }
+.category-card-languages { background-color: var(--cat-languages-bg); border-color: var(--cat-languages-border); }
+.category-card-reading { background-color: var(--cat-reading-bg); border-color: var(--cat-reading-border); }
+.category-card-routine { background-color: var(--cat-routine-bg); border-color: var(--cat-routine-border); }
+.category-card-relaxation { background-color: var(--cat-relaxation-bg); border-color: var(--cat-relaxation-border); }
+.category-card-tutoring { background-color: var(--cat-tutoring-bg); border-color: var(--cat-tutoring-border); }
+
+/* Category Titles */
+.category-title-study_uni { color: var(--cat-study_uni-title); }
+.category-title-career { color: var(--cat-career-title); }
+.category-title-gym_sport { color: var(--cat-gym_sport-title); }
+.category-title-abs { color: var(--cat-abs-title); }
+.category-title-analytics { color: var(--cat-analytics-title); }
+.category-title-languages { color: var(--cat-languages-title); }
+.category-title-reading { color: var(--cat-reading-title); }
+.category-title-routine { color: var(--cat-routine-title); }
+.category-title-relaxation { color: var(--cat-relaxation-title); }
+.category-title-tutoring { color: var(--cat-tutoring-title); }
+
+/* Category Badges */
+.category-badge-study_uni { background-color: var(--cat-study_uni-badge-bg); color: var(--cat-study_uni-badge-text); }
+.category-badge-career { background-color: var(--cat-career-badge-bg); color: var(--cat-career-badge-text); }
+.category-badge-gym_sport { background-color: var(--cat-gym_sport-badge-bg); color: var(--cat-gym_sport-badge-text); }
+.category-badge-abs { background-color: var(--cat-abs-badge-bg); color: var(--cat-abs-badge-text); }
+.category-badge-analytics { background-color: var(--cat-analytics-badge-bg); color: var(--cat-analytics-badge-text); }
+.category-badge-languages { background-color: var(--cat-languages-badge-bg); color: var(--cat-languages-badge-text); }
+.category-badge-reading { background-color: var(--cat-reading-badge-bg); color: var(--cat-reading-badge-text); }
+.category-badge-routine { background-color: var(--cat-routine-badge-bg); color: var(--cat-routine-badge-text); }
+.category-badge-relaxation { background-color: var(--cat-relaxation-badge-bg); color: var(--cat-relaxation-badge-text); }
+.category-badge-tutoring { background-color: var(--cat-tutoring-badge-bg); color: var(--cat-tutoring-badge-text); }
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(180, 180, 190, 0.3);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(180, 180, 190, 0.5);
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+}
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Hide scrollbar utility */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Task Types Custom Scrollbar & Runner (Бегунок) */
+.task-types-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(244, 63, 94, 0.5) transparent;
+}
+.task-types-scroll::-webkit-scrollbar {
+  height: 4px;
+}
+.task-types-scroll::-webkit-scrollbar-button,
+::-webkit-scrollbar-button {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+.task-types-scroll::-webkit-scrollbar-track {
+  background: rgba(226, 232, 240, 0.6);
+  border-radius: 9999px;
+  margin: 0 4px;
+}
+.task-types-scroll::-webkit-scrollbar-thumb {
+  background: rgba(244, 63, 94, 0.6);
+  border-radius: 9999px;
+}
+.task-types-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(244, 63, 94, 0.9);
+}
+.dark .task-types-scroll {
+  scrollbar-color: rgba(244, 63, 94, 0.6) rgba(255, 255, 255, 0.08);
+}
+.dark .task-types-scroll::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.08);
+}
+.dark .task-types-scroll::-webkit-scrollbar-thumb {
+  background: rgba(244, 63, 94, 0.6);
+}
+
+/* Glassmorphism helpers */
+.ios-glass {
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.dark .ios-glass {
+  background: rgba(17, 24, 39, 0.82);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.ios-card {
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ios-card:active {
+  transform: scale(0.985);
+}
+
+/* Animations */
+@keyframes pulseSubtle {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.85; transform: scale(1.02); }
+}
+
+.animate-pulse-subtle {
+  animation: pulseSubtle 3s infinite ease-in-out;
+}
